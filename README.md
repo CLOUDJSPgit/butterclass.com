@@ -10,7 +10,8 @@
 | `404.html` | 없는 주소로 들어왔을 때 보이는 페이지 |
 | `CNAME` | GitHub Pages 맞춤 도메인(`butterclass.com`) |
 | `.nojekyll` | GitHub의 Jekyll 변환을 끈다 |
-| `favicon.svg` | 브라우저 탭 아이콘 |
+| `favicon-16.png`, `favicon-32.png`, `favicon.ico`, `apple-touch-icon.png` | 브라우저 탭·홈 화면 아이콘 (원본 버터 이미지 기반) |
+| `img/` | 히어로 버터 이미지(`butter-drip.webp`), 헤더 로고(`logo-butter.webp`) |
 | `fonts/` | 자체 호스팅 웹폰트(Archivo, Source Serif 4)와 SIL OFL 라이선스 |
 | `robots.txt`, `sitemap.xml` | 검색엔진용 |
 
