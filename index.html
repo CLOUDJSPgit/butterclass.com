@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>더버터 the BUTTER | Startup and strategy research</title>
+<meta name="description" content="the BUTTER (더버터) is a team of business professors at The Catholic University of Korea. We study how startups grow, stall and fail, and turn that work into papers, teaching material and advice.">
+<link rel="canonical" href="https://butterclass.com/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="the BUTTER">
+<meta property="og:title" content="더버터 the BUTTER">
+<meta property="og:description" content="Startup and strategy research by business professors at The Catholic University of Korea.">
+<meta property="og:url" content="https://butterclass.com/">
+<meta name="theme-color" content="#0B1E33">
+<style>
+@font-face{font-family:"Archivo";src:url(fonts/archivo.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+@font-face{font-family:"Source Serif 4";src:url(fonts/source-serif-4.woff2) format("woff2");font-weight:200 900;font-style:normal;font-display:swap}
+@font-face{font-family:"Source Serif 4";src:url(fonts/source-serif-4-italic.woff2) format("woff2");font-weight:200 900;font-style:italic;font-display:swap}
+
+:root{
+  --navy-deep:#0B1E33;
+  --navy:#13304F;
+  --butter:#F2C94C;
+  --butter-pale:#FBF1C9;
+  --white:#FFFFFF;
+  --line:#DCE1E8;
+  --ink:#13243B;
+  --slate:#4B5B6E;
+  --on-navy:#E9EEF4;
+  --on-navy-dim:#A9B7C7;
+
+  --display:"Archivo","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --text:"Source Serif 4","Noto Serif KR","Noto Serif CJK KR","Nanum Myeongjo","AppleMyungjo",Georgia,serif;
+
+  --gutter:clamp(16px,4vw,48px);
+  --max:1120px;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--white);color:var(--ink);font-family:var(--text);font-size:clamp(17px,1.05vw + 12px,19px);line-height:1.6;font-optical-sizing:auto;-webkit-font-smoothing:antialiased}
+html[lang="ko"] body{line-height:1.75;word-break:keep-all}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--butter);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--gutter)}
+.skip{position:absolute;left:-9999px;top:0;background:var(--butter);color:var(--navy-deep);padding:8px 14px;font-family:var(--display);font-weight:700;z-index:10}
+.skip:focus{left:8px;top:8px}
+
+/* language switching: every bilingual line carries both versions */
+html[lang="en"] [lang="ko"]:not(html){display:none!important}
+html[lang="ko"] [lang="en"]:not(html){display:none!important}
+
+/* header */
+.site-head{background:var(--navy-deep);color:var(--on-navy)}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand-mark{width:34px;height:34px;flex:none}
+.brand-name{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:-.01em;line-height:1.1;color:var(--white)}
+.brand-name span{font-weight:500;font-stretch:110%;color:var(--butter);margin-left:6px}
+.site-nav{display:flex;align-items:center;gap:clamp(12px,2.4vw,28px);font-family:var(--display);font-size:15px;font-weight:500}
+.site-nav a{text-decoration:none;color:var(--on-navy-dim)}
+.site-nav a:hover{color:var(--white)}
+.lang{display:inline-flex;border:1px solid rgba(233,238,244,.35);border-radius:999px;overflow:hidden}
+.lang button{font:inherit;font-size:14px;font-weight:600;background:transparent;color:var(--on-navy-dim);border:0;padding:5px 12px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--butter);color:var(--navy-deep)}
+@media (max-width:640px){.site-nav .nav-link{display:none}}
+
+/* hero */
+.hero{background:var(--navy-deep);color:var(--on-navy);padding-block:clamp(48px,8vw,104px) clamp(56px,9vw,120px)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(40px,6vw,88px);align-items:start}
+.hero h1{font-family:var(--display);font-weight:800;font-stretch:100%;font-size:clamp(38px,5.2vw,68px);line-height:1.04;letter-spacing:-.025em;color:var(--white);margin:0 0 .45em;text-wrap:balance}
+html[lang="ko"] .hero h1{letter-spacing:-.04em;line-height:1.18}
+.hero .lede{font-size:clamp(18px,1.3vw + 12px,21px);color:var(--on-navy);max-width:34em;margin:0 0 32px}
+.cta{display:inline-block;font-family:var(--display);font-weight:700;font-size:16px;text-decoration:none;background:var(--butter);color:var(--navy-deep);padding:14px 22px;border-radius:6px}
+.cta:hover{background:#F7D978}
+.cta-note{display:block;margin-top:12px;font-size:15px;color:var(--on-navy-dim)}
+
+/* the acronym: the one loud element on the page */
+.acro{margin:0;padding:0;list-style:none;border-top:1px solid rgba(242,201,76,.35)}
+.acro li{display:grid;grid-template-columns:clamp(64px,7.5vw,104px) minmax(0,1fr);align-items:baseline;column-gap:18px;padding-block:clamp(8px,1vw,12px);border-bottom:1px solid rgba(242,201,76,.35)}
+.acro .ch{font-family:var(--display);font-weight:900;font-stretch:125%;font-size:clamp(46px,5.6vw,76px);line-height:.95;color:var(--butter)}
+.acro .w{font-family:var(--display);font-weight:700;font-size:clamp(18px,1.4vw,21px);color:var(--white);line-height:1.25}
+.acro .d{display:block;font-family:var(--text);font-weight:400;font-size:16px;color:var(--on-navy-dim);margin-top:2px;line-height:1.45}
+.acro-cap{font-size:15px;color:var(--on-navy-dim);margin:0 0 12px}
+@media (prefers-reduced-motion:no-preference){
+  .acro li{animation:rise .5s cubic-bezier(.2,.7,.2,1) both}
+  .acro li:nth-child(1){animation-delay:.10s}.acro li:nth-child(2){animation-delay:.18s}
+  .acro li:nth-child(3){animation-delay:.26s}.acro li:nth-child(4){animation-delay:.34s}
+  .acro li:nth-child(5){animation-delay:.42s}.acro li:nth-child(6){animation-delay:.50s}
+}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}}
+
+/* shared section rhythm */
+.band{padding-block:clamp(64px,9vw,112px)}
+.band-pale{background:var(--butter-pale)}
+.band h2{font-family:var(--display);font-weight:800;font-size:clamp(28px,3vw,40px);line-height:1.12;letter-spacing:-.02em;margin:0 0 .5em;max-width:22em;text-wrap:balance}
+html[lang="ko"] .band h2{letter-spacing:-.035em}
+.band .intro{color:var(--slate);max-width:38em;margin:0 0 clamp(36px,5vw,56px)}
+
+/* what we do: three areas, not a sequence */
+.areas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,4vw,56px)}
+.area{border-top:4px solid var(--butter);padding-top:18px}
+.area h3{font-family:var(--display);font-weight:700;font-size:21px;line-height:1.25;margin:0 0 10px}
+.area p{margin:0;color:var(--slate)}
+@media (max-width:860px){.areas{grid-template-columns:1fr}}
+
+/* milk to butter: a real sequence, so it is numbered */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;counter-reset:step}
+.steps li{counter-increment:step;padding:0 clamp(14px,2vw,28px) 0 0;position:relative}
+.steps li::before{content:counter(step);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--navy-deep);color:var(--butter);font-family:var(--display);font-weight:800;font-size:18px;margin-bottom:16px;position:relative;z-index:1}
+.steps li::after{content:"";position:absolute;left:44px;right:0;top:21px;height:2px;background:var(--navy)}
+.steps li:last-child::after{display:none}
+.steps h3{font-family:var(--display);font-weight:700;font-size:20px;margin:0 0 6px}
+.steps p{margin:0;color:var(--slate);font-size:17px}
+@media (max-width:860px){
+  .steps{grid-template-columns:1fr;gap:28px}
+  .steps li{padding:0 0 0 64px}
+  .steps li::before{position:absolute;left:0;top:-4px;margin:0}
+  .steps li::after{left:21px;right:auto;top:44px;bottom:-28px;width:2px;height:auto}
+}
+
+/* claude */
+.claude{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(32px,6vw,80px);align-items:start}
+.claude ul{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.claude li{padding:16px 0;border-bottom:1px solid var(--line)}
+.claude li b{font-family:var(--display);font-weight:700;display:block;font-size:18px;margin-bottom:2px}
+.claude li span{color:var(--slate)}
+.claude .note{color:var(--slate);margin:20px 0 0;font-style:italic}
+@media (max-width:860px){.claude{grid-template-columns:1fr}}
+
+/* contact / footer */
+.contact{background:var(--navy);color:var(--on-navy);padding-block:clamp(64px,9vw,104px)}
+.contact h2{font-family:var(--display);font-weight:800;font-size:clamp(28px,3vw,40px);letter-spacing:-.02em;color:var(--white);margin:0 0 .4em}
+.contact p{max-width:36em;margin:0 0 28px;color:var(--on-navy)}
+.contact dl{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:10px 28px;margin:36px 0 0;font-size:17px}
+.contact dt{font-family:var(--display);font-weight:600;color:var(--on-navy-dim)}
+.contact dd{margin:0}
+.contact dd a{color:var(--white);text-decoration-color:var(--butter);text-underline-offset:4px}
+@media (max-width:520px){.contact dl{grid-template-columns:1fr;gap:2px}.contact dd{margin-bottom:12px}}
+.site-foot{background:var(--navy-deep);color:var(--on-navy-dim);font-family:var(--display);font-size:14px;padding-block:22px}
+.site-foot .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<a class="skip" href="#main"><span lang="en">Skip to content</span><span lang="ko">본문으로 건너뛰기</span></a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="더버터 the BUTTER">
+      <svg class="brand-mark" viewBox="0 0 34 34" aria-hidden="true">
+        <rect x="1" y="9" width="32" height="18" rx="3" fill="#F2C94C"/>
+        <path d="M1 14 L33 14" stroke="#0B1E33" stroke-width="1.5" opacity=".25"/>
+        <rect x="5" y="5" width="24" height="6" rx="2" fill="#FBF1C9"/>
+      </svg>
+      <span class="brand-name">더버터<span>the BUTTER</span></span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a class="nav-link" href="#work"><span lang="en">What we do</span><span lang="ko">하는 일</span></a>
+      <a class="nav-link" href="#claude"><span lang="en">Claude</span><span lang="ko">Claude 활용</span></a>
+      <a class="nav-link" href="#contact"><span lang="en">Contact</span><span lang="ko">연락처</span></a>
+      <span class="lang" role="group" aria-label="Language">
+        <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-set-lang="ko" aria-pressed="false">한국어</button>
+      </span>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div>
+        <h1>
+          <span lang="en">From raw startup data to refined strategy.</span>
+          <span lang="ko">날것의 스타트업 데이터를, 정제된 전략으로.</span>
+        </h1>
+        <p class="lede">
+          <span lang="en">the BUTTER is a team of business professors at The Catholic University of Korea. We study how startups grow, stall and fail, and turn that work into research papers, teaching material and advice for founders and companies.</span>
+          <span lang="ko">더버터(the BUTTER)는 가톨릭대학교 경영학 교수들이 모인 팀입니다. 스타트업이 크고, 멈추고, 무너지는 과정을 연구하고, 그 결과를 논문과 교재, 창업자와 기업을 위한 자문으로 만듭니다.</span>
+        </p>
+        <a class="cta" href="mailto:contact@butterclass.com"><span lang="en">Email us</span><span lang="ko">메일 보내기</span></a>
+        <span class="cta-note">contact@butterclass.com</span>
+      </div>
+
+      <div>
+        <p class="acro-cap">
+          <span lang="en">Milk is raw information. Butter is what is left after refining it. The six letters say what we refine.</span>
+          <span lang="ko">우유가 날것의 정보라면, 버터는 그것을 정제하고 남은 것입니다. 여섯 글자는 우리가 무엇을 정제하는지 말해 줍니다.</span>
+        </p>
+        <ul class="acro">
+          <li><span class="ch" aria-hidden="true">B</span><span class="w">Business<span class="d" lang="en">Strategy and company-level research</span><span class="d" lang="ko">경영 전략과 기업 중심 연구</span></span></li>
+          <li><span class="ch" aria-hidden="true">U</span><span class="w">Unicorn insights<span class="d" lang="en">Analysis of unicorns and fast-growing startups</span><span class="d" lang="ko">유니콘과 스타트업 분석</span></span></li>
+          <li><span class="ch" aria-hidden="true">T</span><span class="w">Think<span class="d" lang="en">Strategic thinking as everyday practice</span><span class="d" lang="ko">전략적 사고에서 출발하는 활동</span></span></li>
+          <li><span class="ch" aria-hidden="true">T</span><span class="w">Theory<span class="d" lang="en">Grounded in strategy and entrepreneurship theory</span><span class="d" lang="ko">전략·창업 이론에 뿌리를 둔 작업</span></span></li>
+          <li><span class="ch" aria-hidden="true">E</span><span class="w">Entrepreneurship<span class="d" lang="en">Startups and founders at the center</span><span class="d" lang="ko">창업과 스타트업이 중심 주제</span></span></li>
+          <li><span class="ch" aria-hidden="true">R</span><span class="w">Research<span class="d" lang="en">Papers, books and scholarly output</span><span class="d" lang="ko">논문·책 집필과 학술 활동</span></span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="work" aria-labelledby="work-h">
+    <div class="wrap">
+      <h2 id="work-h"><span lang="en">What we do</span><span lang="ko">하는 일</span></h2>
+      <p class="intro">
+        <span lang="en">Our work runs on three tracks. Each one feeds the others: research gives the classes their cases, and the classes and advisory work show us which questions matter.</span>
+        <span lang="ko">일은 세 갈래로 진행합니다. 연구가 수업에 사례를 주고, 수업과 자문이 다시 어떤 질문이 중요한지 알려 줍니다.</span>
+      </p>
+      <div class="areas">
+        <article class="area">
+          <h3><span lang="en">Research and publication</span><span lang="ko">연구와 출판</span></h3>
+          <p>
+            <span lang="en">Paired case studies that set a startup that failed beside one that survived in the same market. We also study business models, platforms and unicorn companies, and publish in academic journals and books for general readers.</span>
+            <span lang="ko">같은 시장에서 무너진 회사와 살아남은 회사를 짝지어 비교하는 사례연구를 합니다. 비즈니스 모델, 플랫폼, 유니콘 기업을 연구해 학술지 논문과 대중서로 냅니다.</span>
+          </p>
+        </article>
+        <article class="area">
+          <h3><span lang="en">Industry collaboration</span><span lang="ko">산학협력과 자문</span></h3>
+          <p>
+            <span lang="en">Strategy advice for startups and established companies, and joint projects with industry partners that bring research questions into real decisions.</span>
+            <span lang="ko">스타트업과 기업에 전략 자문을 하고, 산업계 파트너와 공동 프로젝트를 진행해 연구 질문을 실제 의사결정으로 가져갑니다.</span>
+          </p>
+        </article>
+        <article class="area">
+          <h3><span lang="en">Classes and mentoring</span><span lang="ko">교육과 멘토링</span></h3>
+          <p>
+            <span lang="en">Courses in entrepreneurship, startup marketing and business strategy, built on our own case research, plus mentoring for student founders.</span>
+            <span lang="ko">직접 연구한 사례로 창업, 스타트업 마케팅, 경영전략 수업을 운영하고, 학생 창업팀을 멘토링합니다.</span>
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band-pale" aria-labelledby="process-h">
+    <div class="wrap">
+      <h2 id="process-h"><span lang="en">From milk to butter</span><span lang="ko">우유에서 버터로</span></h2>
+      <p class="intro">
+        <span lang="en">Every project goes through the same four steps.</span>
+        <span lang="ko">모든 프로젝트는 같은 네 단계를 거칩니다.</span>
+      </p>
+      <ol class="steps">
+        <li>
+          <h3><span lang="en">Collect</span><span lang="ko">모으기</span></h3>
+          <p><span lang="en">Gather cases, financial data, interviews and press coverage on a company.</span><span lang="ko">회사의 사례, 재무 데이터, 인터뷰, 기사를 모읍니다.</span></p>
+        </li>
+        <li>
+          <h3><span lang="en">Compare</span><span lang="ko">비교하기</span></h3>
+          <p><span lang="en">Set two companies side by side and find the point where their paths split.</span><span lang="ko">두 회사를 나란히 놓고 길이 갈라진 지점을 찾습니다.</span></p>
+        </li>
+        <li>
+          <h3><span lang="en">Refine</span><span lang="ko">정제하기</span></h3>
+          <p><span lang="en">Read that split through theory and test it against the evidence.</span><span lang="ko">그 갈림길을 이론으로 읽고, 근거로 검증합니다.</span></p>
+        </li>
+        <li>
+          <h3><span lang="en">Share</span><span lang="ko">나누기</span></h3>
+          <p><span lang="en">Publish papers, books and class material, and bring the findings to founders.</span><span lang="ko">논문, 책, 강의 자료로 내고, 그 결과를 창업자에게 전합니다.</span></p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band" id="claude" aria-labelledby="claude-h">
+    <div class="wrap claude">
+      <div>
+        <h2 id="claude-h"><span lang="en">How we use Claude</span><span lang="ko">Claude를 쓰는 방식</span></h2>
+        <p>
+          <span lang="en">Claude works alongside our faculty at every step, from the first reading list to the final lecture.</span>
+          <span lang="ko">Claude는 첫 문헌 목록부터 마지막 강의까지, 모든 단계에서 교수진과 함께 일합니다.</span>
+        </p>
+        <p class="note">
+          <span lang="en">Research judgments stay with the professors. Claude helps us work faster and check our work more carefully.</span>
+          <span lang="ko">연구 판단은 교수가 내립니다. Claude는 일을 빠르게 하고, 더 꼼꼼히 확인하도록 돕습니다.</span>
+        </p>
+      </div>
+      <ul>
+        <li><b><span lang="en">Literature and data</span><span lang="ko">문헌과 데이터</span></b><span><span lang="en">Reading, sorting and summarizing papers, filings and news on the companies we study.</span><span lang="ko">연구 대상 기업의 논문, 공시, 기사를 읽고 분류하고 요약합니다.</span></span></li>
+        <li><b><span lang="en">Case comparison</span><span lang="ko">사례 비교</span></b><span><span lang="en">Structuring paired cases and laying out timelines, decisions and outcomes side by side.</span><span lang="ko">짝지은 사례를 구조화하고, 연표와 결정과 결과를 나란히 정리합니다.</span></span></li>
+        <li><b><span lang="en">Writing and checking</span><span lang="ko">집필과 점검</span></b><span><span lang="en">Drafting, revising and checking manuscripts for consistency, figures and sources.</span><span lang="ko">원고를 쓰고 고치며, 논리 흐름과 수치와 출처를 점검합니다.</span></span></li>
+        <li><b><span lang="en">Teaching material</span><span lang="ko">강의 자료</span></b><span><span lang="en">Building course material, case notes and lecture videos for our classes.</span><span lang="ko">수업에 쓸 강의 자료, 사례 노트, 강의 영상을 만듭니다.</span></span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-h">
+    <div class="wrap">
+      <h2 id="contact-h"><span lang="en">Work with us</span><span lang="ko">함께 일하기</span></h2>
+      <p>
+        <span lang="en">Write to us about joint research, strategy advice, classes or mentoring for your team.</span>
+        <span lang="ko">공동 연구, 전략 자문, 수업이나 팀 멘토링에 관해 메일로 연락해 주세요.</span>
+      </p>
+      <a class="cta" href="mailto:contact@butterclass.com"><span lang="en">Email us</span><span lang="ko">메일 보내기</span></a>
+      <dl>
+        <dt><span lang="en">Email</span><span lang="ko">이메일</span></dt>
+        <dd><a href="mailto:contact@butterclass.com">contact@butterclass.com</a></dd>
+        <dt><span lang="en">Where</span><span lang="ko">위치</span></dt>
+        <dd><span lang="en">The Catholic University of Korea, Bucheon, Gyeonggi-do, Republic of Korea</span><span lang="ko">경기도 부천시 가톨릭대학교</span></dd>
+        <dt><span lang="en">Web</span><span lang="ko">웹</span></dt>
+        <dd><a href="https://butterclass.com/">butterclass.com</a></dd>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span>© 2026 더버터 the BUTTER</span>
+    <span lang="en">Startup and strategy research</span><span lang="ko">스타트업과 경영전략 연구</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var buttons = document.querySelectorAll("[data-set-lang]");
+  function apply(lang) {
+    root.setAttribute("lang", lang);
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].setAttribute("aria-pressed", buttons[i].getAttribute("data-set-lang") === lang ? "true" : "false");
+    }
+  }
+  var chosen = null;
+  try { chosen = new URLSearchParams(location.search).get("lang"); } catch (e) {}
+  if (chosen !== "en" && chosen !== "ko") {
+    try { chosen = localStorage.getItem("butter-lang"); } catch (e) {}
+  }
+  if (chosen !== "en" && chosen !== "ko") {
+    chosen = (navigator.language || "").toLowerCase().indexOf("ko") === 0 ? "ko" : "en";
+  }
+  apply(chosen);
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", function () {
+      var lang = this.getAttribute("data-set-lang");
+      apply(lang);
+      try { localStorage.setItem("butter-lang", lang); } catch (e) {}
+    });
+  }
+})();
+</script>
+</body>
+</html>
