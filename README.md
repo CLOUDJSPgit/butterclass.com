@@ -12,7 +12,7 @@
 | `.nojekyll` | GitHub의 Jekyll 변환을 끈다 |
 | `favicon.svg`, `favicon-16.png`, `favicon-32.png`, `favicon.ico`, `apple-touch-icon.png` | 브라우저 탭·홈 화면 아이콘 (접시 위 녹는 버터 로고) |
 | `img/` | 히어로 버터 이미지(`butter-drip.webp`). 헤더 로고는 `index.html` 안의 SVG |
-| `fonts/` | 자체 호스팅 웹폰트(Archivo, Source Serif 4)와 SIL OFL 라이선스 |
+| `fonts/` | 자체 호스팅 웹폰트(Archivo, Source Serif 4, Pretendard)와 SIL OFL 라이선스. Pretendard는 글자 범위별로 나뉘어 필요한 조각만 내려받는다 |
 | `robots.txt`, `sitemap.xml` | 검색엔진용 |
 
 ## 배포 순서

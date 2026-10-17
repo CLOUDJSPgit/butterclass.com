@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>더버터 the BUTTER | Strategy advisory and startup education</title>
-<meta name="description" content="the BUTTER (더버터) is a strategy advisory and education company founded by business professors. We help startups and companies with strategy, run case-based programs, and publish research on why startups grow or fail.">
+<meta name="description" content="the BUTTER (더버터) is a strategy advisory and education company founded by business professors. We help startups and companies with strategy, run case-based programs, and publish research on why companies grow or fail.">
 <link rel="canonical" href="https://butterclass.com/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
@@ -16,6 +16,7 @@
 <meta property="og:description" content="Strategy advisory, case-based education and startup research, founded by business professors.">
 <meta property="og:url" content="https://butterclass.com/">
 <meta name="theme-color" content="#0B1E33">
+<link rel="stylesheet" href="fonts/pretendard/pretendard.css">
 <style>
 @font-face{font-family:"Archivo";src:url(fonts/archivo.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
 @font-face{font-family:"Source Serif 4";src:url(fonts/source-serif-4.woff2) format("woff2");font-weight:200 900;font-style:normal;font-display:swap}
@@ -33,7 +34,10 @@
   --on-navy:#E9EEF4;
   --on-navy-dim:#A9B7C7;
 
-  --display:"Archivo","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --display:"Archivo","Pretendard Variable","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --sans:"Pretendard Variable",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;
+  --body-ink:#1E2C40;
+  --body-muted:#3B4A5E;
   --text:"Source Serif 4","Noto Serif KR","Noto Serif CJK KR","Nanum Myeongjo","AppleMyungjo",Georgia,serif;
 
   --gutter:clamp(16px,4vw,48px);
@@ -127,14 +131,14 @@ html[lang="ko"] .band h2{letter-spacing:-.035em}
   .steps li::after{left:21px;right:auto;top:44px;bottom:-28px;width:2px;height:auto}
 }
 
-/* claude */
-.claude{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(32px,6vw,80px);align-items:start}
-.claude ul{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
-.claude li{padding:16px 0;border-bottom:1px solid var(--line)}
-.claude li b{font-family:var(--display);font-weight:700;display:block;font-size:18px;margin-bottom:2px}
-.claude li span{color:var(--slate)}
-.claude .note{color:var(--slate);margin:20px 0 0;font-style:italic}
-@media (max-width:860px){.claude{grid-template-columns:1fr}}
+/* ai */
+.ai-way{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(32px,6vw,80px);align-items:start}
+.ai-way ul{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.ai-way li{padding:16px 0;border-bottom:1px solid var(--line)}
+.ai-way li b{font-family:var(--display);font-weight:700;display:block;font-size:18px;margin-bottom:2px}
+.ai-way li > span{color:var(--slate)}
+.ai-way .note{color:var(--slate);margin:20px 0 0;font-style:italic}
+@media (max-width:860px){.ai-way{grid-template-columns:1fr}}
 
 /* contact / footer */
 .contact{background:var(--navy);color:var(--on-navy);padding-block:clamp(64px,9vw,104px)}
@@ -152,6 +156,20 @@ html[lang="ko"] .band h2{letter-spacing:-.035em}
 .biz dd{margin:0;color:var(--on-navy)}
 .biz a{color:var(--on-navy);text-decoration-color:var(--butter);text-underline-offset:3px}
 .site-foot .copy{margin:0;padding-top:14px;border-top:1px solid rgba(233,238,244,.12)}
+/* readability: light sections use a sans body, darker ink, roomier lines */
+.band{font-family:var(--sans);color:var(--body-ink)}
+.band .intro{color:var(--body-muted);font-size:clamp(17px,.5vw + 14px,19px);line-height:1.7}
+html[lang="ko"] .band{letter-spacing:-.01em}
+html[lang="ko"] .band .intro,html[lang="ko"] .area p,html[lang="ko"] .steps p,html[lang="ko"] .ai-way p,html[lang="ko"] .ai-way li > span{line-height:1.8}
+.area h3{font-size:22px;font-weight:800;color:var(--ink);margin-bottom:12px}
+.area p{color:var(--body-ink);font-size:17px;line-height:1.7}
+.steps h3{font-weight:800;color:var(--ink)}
+.steps p{color:var(--body-ink);font-size:16.5px}
+.ai-way > div > p{font-size:18px;color:var(--body-ink);line-height:1.7}
+.ai-way li{padding:20px 0}
+.ai-way li b{font-size:19px;font-weight:800;color:var(--ink);margin-bottom:6px}
+.ai-way li > span{color:var(--body-ink);font-size:17px;line-height:1.7}
+.ai-way .note{font-style:normal;color:var(--ink);background:var(--butter-pale);border-left:4px solid var(--butter);padding:14px 18px;border-radius:0 8px 8px 0;margin-top:24px;font-size:16.5px}
 </style>
 </head>
 <body>
@@ -177,7 +195,7 @@ html[lang="ko"] .band h2{letter-spacing:-.035em}
     </a>
     <nav class="site-nav" aria-label="Main">
       <a class="nav-link" href="#work"><span lang="en">Services</span><span lang="ko">서비스</span></a>
-      <a class="nav-link" href="#claude"><span lang="en">Claude</span><span lang="ko">Claude 활용</span></a>
+      <a class="nav-link" href="#ai"><span lang="en">AI</span><span lang="ko">AI 활용</span></a>
       <a class="nav-link" href="#contact"><span lang="en">Contact</span><span lang="ko">연락처</span></a>
       <span class="lang" role="group" aria-label="Language">
         <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
@@ -194,12 +212,12 @@ html[lang="ko"] .band h2{letter-spacing:-.035em}
       <div>
         <img class="hero-butter" src="img/butter-drip.webp" width="1380" height="576" alt="" decoding="async" fetchpriority="high">
         <h1>
-          <span lang="en">From raw startup data to refined strategy.</span>
-          <span lang="ko">날것의 스타트업 데이터를, 정제된 전략으로.</span>
+          <span lang="en">From raw company data to refined strategy.</span>
+          <span lang="ko">날것의 기업 데이터를, 정제된 전략으로.</span>
         </h1>
         <p class="lede">
-          <span lang="en">the BUTTER is a strategy advisory and education company founded by business professors. We study how startups grow, stall and fail, then turn that research into strategy advice, training programs and reports for founders and companies.</span>
-          <span lang="ko">더버터(the BUTTER)는 경영학 교수들이 세운 전략 자문·교육 회사입니다. 스타트업이 크고, 멈추고, 무너지는 과정을 연구하고, 그 결과를 창업자와 기업을 위한 전략 자문, 교육 프로그램, 리포트로 만듭니다.</span>
+          <span lang="en">the BUTTER is a strategy advisory and education company founded by business professors. We study how companies grow, stall and fail, then turn that research into strategy advice, training programs and reports for founders and companies.</span>
+          <span lang="ko">더버터(the BUTTER)는 경영학 교수들이 세운 전략 자문·교육 회사입니다. 기업이 크고, 멈추고, 무너지는 과정을 연구하고, 그 결과를 창업자와 기업을 위한 전략 자문, 교육 프로그램, 리포트로 만듭니다.</span>
         </p>
         <a class="cta" href="mailto:contact@butterclass.com"><span lang="en">Email us</span><span lang="ko">메일 보내기</span></a>
         <span class="cta-note">contact@butterclass.com</span>
@@ -240,15 +258,15 @@ html[lang="ko"] .band h2{letter-spacing:-.035em}
         <article class="area">
           <h3><span lang="en">Education and workshops</span><span lang="ko">교육과 워크숍</span></h3>
           <p>
-            <span lang="en">Programs in entrepreneurship, startup marketing and business strategy for companies, universities and accelerators, taught with our own cases.</span>
-            <span lang="ko">기업, 대학, 액셀러레이터를 위한 창업, 스타트업 마케팅, 경영전략 프로그램을 직접 연구한 사례로 운영합니다.</span>
+            <span lang="en">Programs in entrepreneurship, business strategy and startup marketing for companies, universities and accelerators, taught with our own cases.</span>
+            <span lang="ko">기업, 대학, 액셀러레이터를 위한 창업, 경영전략, 스타트업 마케팅 프로그램을 직접 연구한 사례로 운영합니다.</span>
           </p>
         </article>
         <article class="area">
           <h3><span lang="en">Case research and reports</span><span lang="ko">사례 연구와 리포트</span></h3>
           <p>
-            <span lang="en">Paired case studies that set a startup that failed beside one that survived in the same market, published as reports, teaching cases and books.</span>
-            <span lang="ko">같은 시장에서 무너진 회사와 살아남은 회사를 짝지어 비교하고, 그 결과를 리포트, 교육용 사례, 책으로 냅니다.</span>
+            <span lang="en">Paired case studies that set a startup that failed beside one that survived in the same market, published as papers, reports, teaching cases and books.</span>
+            <span lang="ko">같은 시장에서 무너진 회사와 살아남은 회사를 짝지어 비교하고, 그 결과를 논문, 리포트, 교육용 사례, 책으로 냅니다.</span>
           </p>
         </article>
       </div>
@@ -277,23 +295,23 @@ html[lang="ko"] .band h2{letter-spacing:-.035em}
         </li>
         <li>
           <h3><span lang="en">Share</span><span lang="ko">나누기</span></h3>
-          <p><span lang="en">Publish papers, books and class material, and bring the findings to founders.</span><span lang="ko">논문, 책, 강의 자료로 내고, 그 결과를 창업자에게 전합니다.</span></p>
+          <p><span lang="en">Publish papers, books and class material, and share the findings.</span><span lang="ko">논문, 책, 강의 자료로 내고, 그 결과를 공유합니다.</span></p>
         </li>
       </ol>
     </div>
   </section>
 
-  <section class="band" id="claude" aria-labelledby="claude-h">
-    <div class="wrap claude">
+  <section class="band" id="ai" aria-labelledby="ai-h">
+    <div class="wrap ai-way">
       <div>
-        <h2 id="claude-h"><span lang="en">How we use Claude</span><span lang="ko">Claude를 쓰는 방식</span></h2>
+        <h2 id="ai-h"><span lang="en">How we use AI</span><span lang="ko">AI를 쓰는 방식</span></h2>
         <p>
-          <span lang="en">Claude works alongside our team at every step, from the first reading list to the final client report.</span>
-          <span lang="ko">Claude는 첫 문헌 목록부터 고객에게 드리는 마지막 리포트까지, 모든 단계에서 우리 팀과 함께 일합니다.</span>
+          <span lang="en">AI works alongside our team at every step, from the first reading list to the final client report.</span>
+          <span lang="ko">AI는 첫 문헌 목록부터 고객에게 드리는 마지막 리포트까지, 모든 단계에서 우리 팀과 함께 일합니다.</span>
         </p>
         <p class="note">
-          <span lang="en">Judgments stay with our team. Claude helps us work faster and check our work more carefully.</span>
-          <span lang="ko">판단은 우리 팀이 내립니다. Claude는 일을 빠르게 하고, 더 꼼꼼히 확인하도록 돕습니다.</span>
+          <span lang="en">Judgments stay with our team. AI helps us work faster and check our work more carefully.</span>
+          <span lang="ko">판단은 우리 팀이 내립니다. AI는 일을 빠르게 하고, 더 꼼꼼히 확인하도록 돕습니다.</span>
         </p>
       </div>
       <ul>
